@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity TipoOperacao.
+    -->
+    <changeSet id="20260328193448-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="conta_credito_id"
+                                 baseTableName="mov_tipo_operacao"
+                                 constraintName="fk_mov_tipo_operacao__conta_credito_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ctb_conta_contabil"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conta_debito_id"
+                                 baseTableName="mov_tipo_operacao"
+                                 constraintName="fk_mov_tipo_operacao__conta_debito_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ctb_conta_contabil"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="moeda_carteira_id"
+                                 baseTableName="mov_tipo_operacao"
+                                 constraintName="fk_mov_tipo_operacao__moeda_carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+    </changeSet>
+</databaseChangeLog>

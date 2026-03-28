@@ -1,0 +1,118 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193451"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "dep_deposito",
+  "fields": [
+    {
+      "fieldName": "valor",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorCreditado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "valorSaldoCarteira",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tipoDeposito",
+      "fieldType": "EnumTipoDeposito",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PIX,BOLETO"
+    },
+    {
+      "fieldName": "situacaoDeposito",
+      "fieldType": "EnumStatusDeposito",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,EM_PROCESSAMENTO,APROVADO,REJEITADO,CANCELADO"
+    },
+    {
+      "fieldName": "numeroReferencia",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "referenciaExterna",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "motivoRejeicao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "contabilizado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeUsuarioFixo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "numeroParcela",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Deposito",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "contaBancaria",
+      "relationshipName": "contaBancaria",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

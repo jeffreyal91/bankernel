@@ -1,0 +1,11 @@
+id;tipo;situacao;valor_saque;valor_enviado;codigo_barras;campo_livre;saque_id;usuario_id
+1;PAGAMENTO;CRIADO;16851.78;2797.59;barring unaccountably state;after as;1;1
+2;PAGAMENTO;CANCELADO;2549.32;1758.68;even;mmm malfunction cow;2;2
+3;TRANSFERENCIA;EFETIVADO;10556.84;17245.5;fooey experience now;so slide;3;2
+4;PAGAMENTO;EFETIVADO;905.9;7594.67;searchingly brr phew;drive what;4;2
+5;TRANSFERENCIA;CRIADO;7394.58;22568.99;geez;cutlet hopeful illustrious;5;1
+6;TRANSFERENCIA;CRIADO;16692.31;8026.55;while;eek;6;2
+7;PAGAMENTO;EFETIVADO;6902.93;25573.38;rubbery gust meanwhile;um;7;1
+8;PAGAMENTO;CRIADO;15518.59;28961.13;whoever gah inborn;aware what;8;1
+9;TRANSFERENCIA;REJEITADO;23304.37;27249.05;shrilly major;meh supposing under;9;2
+10;TRANSFERENCIA;EM_PROCESSAMENTO;22948.48;11774.64;uselessly ack viciously;joint meanwhile accentuate;10;2

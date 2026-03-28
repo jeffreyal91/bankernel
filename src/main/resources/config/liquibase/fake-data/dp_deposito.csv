@@ -1,0 +1,11 @@
+id;valor;valor_creditado;valor_saldo_carteira;tipo_deposito;status_deposito;numero_referencia;referencia_externa;descricao;motivo_rejeicao;contabilizado;nome_usuario_fixo;numero_parcela;carteira_id;moeda_carteira_id;usuario_id
+1;10031.1;7850.3;27787.13;BOLETO;PENDENTE;carefully impanel avow;slimy;verbally however;phooey fleck;true;drat;30839;1;1;1
+2;5257.79;6353.86;23107.17;BOLETO;APROVADO;airmail sashay;decide rebuff;why yet the;petal harangue;false;now upbeat deplore;27284;2;2;2
+3;21438.98;10922.82;29673.34;PIX;CANCELADO;vaguely;toward brr;abnegate;sans supposing comb;false;spirit um corrupt;19662;3;3;1
+4;19171.54;137.85;21471.24;BOLETO;APROVADO;provided unaware soon;whoa whose self-confidence;lazy orientate however;snow why;false;or jury because;31983;4;4;2
+5;27305.86;5864.46;13921.18;BOLETO;PENDENTE;delirious;platter;shoulder plain red;ultimate with presell;true;even;6391;5;5;2
+6;20724.5;7294.69;12701.95;PIX;EM_PROCESSAMENTO;nauseate yearn invite;heartache hence vivacious;excluding;forenenst fumigate incidentally;false;fence huzzah afore;30636;6;6;1
+7;29458.39;32324.28;1464.64;PIX;APROVADO;only;squeaky;than;plus downright;true;among;19844;7;7;2
+8;12931.43;19560.14;23948.38;BOLETO;CANCELADO;reference;staid internal;aw;but;false;equally;28643;8;8;1
+9;29655.73;26618.17;8636.6;BOLETO;PENDENTE;honestly zowie;whoever hmph finally;deflate essence triumphantly;best-seller pendant;false;greatly;28116;9;9;1
+10;11745.74;624.49;15430.05;PIX;EM_PROCESSAMENTO;till far-off now;incidentally;aircraft;secret fervently below;false;willfully and preside;18607;10;10;1

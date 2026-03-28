@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Saque.
+    -->
+    <changeSet id="20260328193454-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="transacao_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__transacao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mov_transacao"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="transacao_estorno_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__transacao_estorno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mov_transacao"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="carteira_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="moeda_carteira_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__moeda_carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conta_bancaria_destino_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__conta_bancaria_destino_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="saq_conta_bancaria"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="escritorio_id"
+                                 baseTableName="saq_saque"
+                                 constraintName="fk_saq_saque__escritorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ges_escritorio"
+                                 />
+    </changeSet>
+</databaseChangeLog>

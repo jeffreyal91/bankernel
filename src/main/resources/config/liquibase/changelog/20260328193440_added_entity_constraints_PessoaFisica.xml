@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity PessoaFisica.
+    -->
+    <changeSet id="20260328193440-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="moeda_principal_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__moeda_principal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="nacionalidade_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__nacionalidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_pais"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="profissao_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__profissao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_profissao"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="plano_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__plano_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="conf_plano"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="escritorio_id"
+                                 baseTableName="pes_pessoa_fisica"
+                                 constraintName="fk_pes_pessoa_fisica__escritorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ges_escritorio"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+id;valor_saque;valor_enviado;descricao;tipo_saque;situacao_saque;numero_referencia;motivo_rejeicao;contabilizado;nome_usuario_fixo;carteira_id;moeda_carteira_id;usuario_id
+1;8933.38;1526.66;soon among;PIX_CHAVE;ESTORNADO;unto honestly;woot;true;kissingly known;1;1;1
+2;32399.56;2570.74;draft mortar forsaken;PIX_MANUAL;CANCELADO;gut massive swill;supposing intensely disposer;false;until singing;2;2;2
+3;18729.59;21155.12;commodity boohoo;PIX_MANUAL;CANCELADO;hopelessly augment confirm;hmph than;false;present reasoning;3;3;2
+4;13215.63;24342.34;meanwhile;PIX_CHAVE;ESTORNADO;how;shrilly spectate;false;so;4;4;1
+5;11497.7;107.09;birdbath scoop;PIX_CHAVE;PENDENTE;plait times;deer;false;as;5;5;2
+6;6028.05;9896.35;thorough;PIX_CHAVE;PENDENTE;shakily;pfft marimba;false;invite politely;6;6;2
+7;13182.41;29944.52;phooey facilitate;PIX_CHAVE;REJEITADO;furiously pop;inasmuch apud down;true;peppery verbally;7;7;1
+8;8079.32;26640.54;provided carnival circa;PIX_MANUAL;ESTORNADO;at within;overcook;false;very gee;8;8;2
+9;26028.61;8362.8;unexpectedly indeed;PIX_MANUAL;REJEITADO;psst;yuck;true;sans curl;9;9;1
+10;21492.56;32209.04;annually drat;PIX_CHAVE;REJEITADO;pronoun;except usefully;true;celebrate gadzooks quip;10;10;2

@@ -1,0 +1,11 @@
+id;titulo;mensagem;tipo;situacao;canal;lida;usuario_id
+1;yippee against;happy-go-lucky;PUSH;LIDA;INTERNO;true;1
+2;trek once;tempting;PUSH;LIDA;EMAIL;true;2
+3;consequently hourly account;solemnly ugh overconfidently;PUSH;FALHA;INTERNO;true;2
+4;remark ha knottily;absolve kindheartedly where;PUSH;LIDA;EMAIL;false;1
+5;pretend expansion sedately;cautiously anesthetize gadzooks;INTERNA;LIDA;EMAIL;false;2
+6;inconsequential aside;poetry;EMAIL;LIDA;SMS;true;1
+7;snack bandwidth;of proper loudly;PUSH;ENVIADA;PUSH;true;2
+8;now;apropos notwithstanding;PUSH;PENDENTE;EMAIL;true;2
+9;near;cinema stained relaunch;EMAIL;PENDENTE;SMS;false;1
+10;carelessly gadzooks;gah;SMS;LIDA;PUSH;false;2

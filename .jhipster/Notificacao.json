@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193511"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "ntf_notificacao",
+  "fields": [
+    {
+      "fieldName": "titulo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "mensagem",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoNotificacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EMAIL,PUSH,SMS,INTERNA"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusNotificacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,ENVIADA,FALHA,LIDA"
+    },
+    {
+      "fieldName": "canal",
+      "fieldType": "EnumCanalNotificacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EMAIL,PUSH,SMS,INTERNO"
+    },
+    {
+      "fieldName": "lida",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Notificacao",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

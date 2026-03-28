@@ -1,0 +1,72 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193448"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "mov_tipo_operacao",
+  "fields": [
+    {
+      "fieldName": "codigo",
+      "fieldType": "EnumTipoOperacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEPOSITO_PIX,DEPOSITO_BOLETO,SAQUE_PIX_CHAVE,SAQUE_PIX_MANUAL,SAQUE_PIX_QR,SAQUE_BOLETO,SAQUE_TED,TRANSFERENCIA_INTERNA,COBRANCA_PIX,COBRANCA_BOLETO,ESTORNO_DEPOSITO,ESTORNO_SAQUE"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sinalCredito",
+      "fieldType": "EnumSinalContabil",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "POSITIVO,NEGATIVO"
+    },
+    {
+      "fieldName": "sinalDebito",
+      "fieldType": "EnumSinalContabil",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "POSITIVO,NEGATIVO"
+    }
+  ],
+  "name": "TipoOperacao",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "contaContabil",
+      "relationshipName": "contaCredito",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "contaContabil",
+      "relationshipName": "contaDebito",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

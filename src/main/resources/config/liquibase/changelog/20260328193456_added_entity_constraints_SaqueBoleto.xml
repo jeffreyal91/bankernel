@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity SaqueBoleto.
+    -->
+    <changeSet id="20260328193456-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="saque_id"
+                                 baseTableName="saq_saque_boleto"
+                                 constraintName="fk_saq_saque_boleto__saque_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="saq_saque"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="saq_saque_boleto"
+                                 constraintName="fk_saq_saque_boleto__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+id;valor;valor_creditado;valor_creditado_carteira;id_produto_externo;nome_produto_externo;status;tipo;desconto_geral;tipo_desconto;contabilizado;nome_usuario_fixo;token_checkout;id_externo;webhook_notificado;usuario_id;carteira_id;moeda_carteira_id
+1;21559.68;13496.23;21391.18;meh verify;dismal represent snuggle;EXPIRADO;BOLETO;10785.13;PERCENTUAL;true;tomorrow;accidentally suffice;during cross;false;1;1;1
+2;20368.3;11619.11;14308.44;to sonar;pleasure upliftingly;PENDENTE;BOLETO;21852.89;PERCENTUAL;true;or;upright;jealous;true;2;2;2
+3;22882.08;26522.52;16276.67;malfunction;dazzling yum;APROVADO;PIX;29039.38;FIXO;false;since;finally outside boo;advocate readmit;true;2;3;3
+4;26026.33;15651.68;26606.47;institute weekly;complicated if;REJEITADO;BOLETO;31949.22;PERCENTUAL;true;awful but;sometimes diligently;whistle faithfully;false;2;4;4
+5;6468.59;22573.99;16316.6;oh boohoo sharply;while;EXPIRADO;BOLETO;15271.63;PERCENTUAL;true;pish gee;abseil considering whisper;considering terribly;true;2;5;5
+6;18353.28;18906.11;21313.12;as lightly;mid sightseeing chatter;CANCELADO;PIX;17251;PERCENTUAL;false;stormy since bad;athwart private spherical;border as recklessly;true;1;6;6
+7;15039.73;31830.46;15692.55;suspension;properly;PENDENTE;PIX;12467.23;FIXO;false;times aside midst;so hmph;yuck;true;2;7;7
+8;26717.62;31796.87;18565.47;versus;hungrily;EM_PROCESSAMENTO;BOLETO;9786.95;FIXO;false;off pro which;stealthily;following;true;2;8;8
+9;19759.73;26174.63;31103.41;unnecessarily festival;ramp impartial;APROVADO;BOLETO;20316.07;PERCENTUAL;false;because cautiously;confute shyly vice;unless front programme;true;1;9;9
+10;12355.54;20334.17;4266.7;revere oof lest;yahoo oxidise;CANCELADO;BOLETO;21953.41;FIXO;false;hefty;a but lucky;measly enormously;true;1;10;10

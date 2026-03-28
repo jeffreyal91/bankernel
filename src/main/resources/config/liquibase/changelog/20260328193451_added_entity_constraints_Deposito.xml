@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Deposito.
+    -->
+    <changeSet id="20260328193451-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="transacao_id"
+                                 baseTableName="dep_deposito"
+                                 constraintName="fk_dep_deposito__transacao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mov_transacao"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="carteira_id"
+                                 baseTableName="dep_deposito"
+                                 constraintName="fk_dep_deposito__carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="moeda_carteira_id"
+                                 baseTableName="dep_deposito"
+                                 constraintName="fk_dep_deposito__moeda_carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="dep_deposito"
+                                 constraintName="fk_dep_deposito__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conta_bancaria_id"
+                                 baseTableName="dep_deposito"
+                                 constraintName="fk_dep_deposito__conta_bancaria_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="saq_conta_bancaria"
+                                 />
+    </changeSet>
+</databaseChangeLog>

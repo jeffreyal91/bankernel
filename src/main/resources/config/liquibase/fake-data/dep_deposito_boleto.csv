@@ -1,0 +1,11 @@
+id;tipo;situacao;codigo_barras;linha_digitavel;valor_original;valor_creditado;valor_recebido;pagador_nome;pagador_cpf;pagador_cnpj;data_vencimento;data_recebimento;contabilizado;deposito_id;carteira_id;usuario_id
+1;DEPOSITO;REJEITADO;onto;puppet give;18143.97;30333.75;29531.12;suspiciously the;than;before redress;2026-03-28;2026-03-28T14:06:07;true;1;1;1
+2;DEPOSITO;CANCELADO;towards fabricate yet;yet;14784.51;9992.98;16058.44;per long soup;quiet;finally monume;2026-03-27;2026-03-28T04:47:16;true;2;2;2
+3;COBRANCA;EM_PROCESSO;upon sheepishly kiddingly;uh-huh;6393.35;10990.49;4245.3;if;among wealt;rout following;2026-03-28;2026-03-28T06:12:24;false;3;3;1
+4;COBRANCA;PENDENTE;while;likewise;8549.62;10356.42;14213.59;fake within;gadzooks an;warming by er;2026-03-28;2026-03-28T13:09:51;false;4;4;1
+5;DEPOSITO;PENDENTE;upward whenever efface;downright sorrowful;23144.36;7503.48;22805.46;oof;till worth ;bah ham;2026-03-28;2026-03-28T00:25:16;false;5;5;2
+6;COBRANCA;APROVADO;closely throughout;peter dredger;10444.96;4144.06;27738.46;playfully psst militate;maul;smoke developm;2026-03-28;2026-03-28T16:40:02;true;6;6;1
+7;DEPOSITO;PAGO;since;loose;18882.66;30505.25;16363.79;provided misspend;notwithstan;modulo;2026-03-28;2026-03-28T11:33:05;true;7;7;1
+8;DEPOSITO;EM_PROCESSO;display;over;17418.5;16557.7;27264.71;what unexpectedly;chunter sin;decision;2026-03-28;2026-03-28T03:34:14;true;8;8;1
+9;COBRANCA;CANCELADO;flimsy as;quietly woefully;29844.78;18207.69;12595.49;phew;fully;radiant shakil;2026-03-28;2026-03-28T02:36:48;true;9;9;2
+10;DEPOSITO;CANCELADO;observe;mundane yesterday skateboard;20593.83;23487.39;4063.32;positively;likewise el;appropriate sh;2026-03-28;2026-03-28T01:40:32;false;10;10;2

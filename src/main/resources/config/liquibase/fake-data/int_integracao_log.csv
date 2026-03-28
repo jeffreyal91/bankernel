@@ -1,0 +1,11 @@
+id;provider;tipo_integracao;operacao;request_body;response_body;status_http;sucesso;mensagem_erro;duracao_ms;tipo_entidade_origem;id_entidade_origem
+1;yum fiddle experience;TED;if;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;22612;true;beautifully;7016;accentuate among ugh;14641
+2;what probate;TED;generally gee;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;10283;true;welcome meh;13006;heavily avow;18576
+3;besides incidentally ew;TED;mmm;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;24303;false;coaxingly versus segregate;5168;beyond obsess before;30649
+4;and pfft vainly;PIX;though instead redact;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;24160;false;swim;31979;likewise;16000
+5;grizzled secret;NOTIFICACAO;scarily;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;30855;false;curl yuck;10296;tinted over;19678
+6;a trivial;TED;soap yet curry;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;31682;true;well grown concerning;9818;electronics down;12963
+7;uh-huh lucky;BOLETO;which silent;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;5151;false;wasteful appropriate edge;24951;willfully;10992
+8;onto override;TED;gah upright;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;1544;false;after putrid mathematics;7589;march wherever duh;8170
+9;yearningly surge while;NOTIFICACAO;wetly;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;17830;false;incidentally;31294;where;22426
+10;shakily before frail;BOLETO;psst until well-groomed;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;7104;false;um wonderfully populist;21403;lovingly truly;26589

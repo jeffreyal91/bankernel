@@ -1,0 +1,11 @@
+id;valor;valor_creditado;valor_creditado_carteira;id_produto_externo;nome_produto_externo;situacao;tipo;desconto_geral;tipo_desconto;contabilizado;nome_usuario_fixo;chave_cobranca;identificador_externo;retorno_notificado;usuario_id;carteira_id;moeda_carteira_id
+1;27177.82;30609.38;32751.32;rotating option widow;gosh gladly;REJEITADO;PIX;5945.39;FIXO;true;emerge goose till;burgeon though;championship aha;true;1;1;1
+2;7327.21;4281.2;30258.25;on;meh;ESTORNADO;PIX;9740.53;FIXO;true;badly;noxious hungrily blah;or like likewise;false;2;2;2
+3;5659.13;31216.3;2507.7;blah;young during instead;EM_PROCESSAMENTO;BOLETO;7677.14;PERCENTUAL;false;gah whether where;rebel;case unnaturally;false;2;3;3
+4;27365.46;12295.09;6989.06;wherever;subtract;EM_PROCESSAMENTO;PIX;12479.12;FIXO;false;inferior alienated;mysteriously geez meanwhile;notwithstanding suspension majestically;true;1;4;4
+5;26572.95;23487.71;5569.28;below;junior;REJEITADO;PIX;2634.29;PERCENTUAL;true;priesthood;unaware although;successfully negligible pish;true;1;5;5
+6;29276.83;15750.58;11813.83;dulcimer lumbering;however boldly;ESTORNADO;BOLETO;21048.44;PERCENTUAL;false;woot hastily;glorious while whoa;yowza unlike bah;true;1;6;6
+7;20219.15;32689.37;14035.64;godfather;daintily;PENDENTE;PIX;32015.59;FIXO;true;while analyse;duh handy birth;commandeer though;false;2;7;7
+8;17453.55;32280.74;28626.95;generally yesterday;yearly parade;CANCELADO;BOLETO;28062.21;FIXO;false;wherever instance;phew aha frizz;into calculating huzzah;false;1;8;8
+9;13738.67;660.75;15924.94;dredger severe off;deny complication median;PENDENTE;BOLETO;18169.97;FIXO;true;but gadzooks;if always;t-shirt;false;2;9;9
+10;10095.72;13610.32;358.99;charm adaptation;neatly until unto;APROVADO;BOLETO;2564.18;PERCENTUAL;false;weatherize yesterday snuggle;embed sushi impanel;canter;true;2;10;10

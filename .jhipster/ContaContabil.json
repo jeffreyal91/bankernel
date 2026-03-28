@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193503"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "ctb_conta_contabil",
+  "fields": [
+    {
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "saldo",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "tipoContaContabil",
+      "fieldType": "EnumTipoContaContabil",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ATIVO,PASSIVO,RECEITA,DESPESA"
+    },
+    {
+      "fieldName": "categoriaContaContabil",
+      "fieldType": "EnumCategoriaContaContabil",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "OPERACIONAL,FINANCEIRA,ADMINISTRATIVA"
+    },
+    {
+      "fieldName": "ativa",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "ContaContabil",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

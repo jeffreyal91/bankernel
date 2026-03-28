@@ -1,0 +1,110 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193452"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "dep_deposito_pix",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoDepositoPix",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "QR_ESTATICO,QR_DINAMICO,QR_DINAMICO_VENCIMENTO"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusDepositoPix",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EM_PROCESSO,PENDENTE,APROVADO,REJEITADO,CANCELADO,EXPIRADO"
+    },
+    {
+      "fieldName": "valorOriginal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorCreditado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "valorRecebido",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "codigoQr",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "identificadorTransacao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "identificadorPontaAPonta",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "pagadorNome",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "pagadorCpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "pagadorCnpj",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "14"
+    },
+    {
+      "fieldName": "dataRecebimento",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "contabilizado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "DepositoPix",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "deposito",
+      "relationshipName": "deposito",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,90 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193450"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "mov_historico_operacao",
+  "fields": [
+    {
+      "fieldName": "valor",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "saldoApos",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "tipoSimbolo",
+      "fieldType": "EnumTipoSimbolo",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ENTRADA,SAIDA"
+    },
+    {
+      "fieldName": "numeroReferencia",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "tipoHistorico",
+      "fieldType": "EnumTipoHistorico",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEPOSITO,SAQUE,TRANSFERENCIA_ENVIADA,TRANSFERENCIA_RECEBIDA,COBRANCA,ESTORNO"
+    },
+    {
+      "fieldName": "situacaoHistorico",
+      "fieldType": "EnumStatusHistorico",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,CONFIRMADO,CANCELADO"
+    },
+    {
+      "fieldName": "tipoEntidadeOrigem",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "idEntidadeOrigem",
+      "fieldType": "Long"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "HistoricoOperacao",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

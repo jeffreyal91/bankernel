@@ -1,0 +1,11 @@
+id;fornecedor;tipo_integracao;operacao;corpo_requisicao;corpo_resposta;codigo_http;sucesso;mensagem_erro;duracao_milissegundos;tipo_entidade_origem;id_entidade_origem
+1;when;TED;phooey;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;25133;false;muddy spherical secret;24995;miserably boohoo reach;22841
+2;gadzooks meanwhile;PIX;quick following mortise;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;23956;false;charm towards till;26454;ew;2498
+3;given towards pointless;BOLETO;meh;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;26889;false;quadruple innocent unabashedly;6717;oof what lightly;14859
+4;yuck of;PIX;anenst noted testing;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;32162;false;mobilise battle;24074;aside on;21953
+5;soon;BOLETO;pry;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;24035;false;meanwhile;1694;yawn ceramics;12153
+6;pfft;BOLETO;nab superficial amidst;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;10967;true;wire given recklessly;21966;furthermore;31418
+7;terribly upsell;PIX;apropos ouch;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;1507;true;mmm whup ultimate;11728;duh per yuck;20817
+8;brr hmph hello;PIX;yieldingly yogurt;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;27417;false;pish hmph;14448;blah for;12180
+9;than;TED;preside noisily;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;19535;true;pop;24054;quicker;3024
+10;yowza gosh extract;NOTIFICACAO;collectivization shrilly phew;../fake-data/blob/hipster.txt;../fake-data/blob/hipster.txt;1781;true;white;9437;ouch investigate;20124

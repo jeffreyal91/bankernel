@@ -1,0 +1,123 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193440"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "pes_pessoa_fisica",
+  "fields": [
+    {
+      "fieldName": "cpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "nomeCompleto",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "nomeSocial",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "dataNascimento",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "genero",
+      "fieldType": "EnumGenero",
+      "fieldValues": "MASCULINO,FEMININO,OUTRO,NAO_INFORMADO"
+    },
+    {
+      "fieldName": "nomeMae",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "telefoneVerificado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nivelRisco",
+      "fieldType": "EnumNivelRisco",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "BAIXO,MEDIO,ALTO,CRITICO"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusPessoa",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ATIVO,INATIVO,BLOQUEADO,PENDENTE"
+    },
+    {
+      "fieldName": "bloqueioSaque",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "PessoaFisica",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaPrincipal",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "pais",
+      "relationshipName": "nacionalidade",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "profissao",
+      "relationshipName": "profissao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "plano",
+      "relationshipName": "plano",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "escritorio",
+      "relationshipName": "escritorio",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

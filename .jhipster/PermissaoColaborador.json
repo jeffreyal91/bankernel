@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193444"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "pes_permissao_colaborador",
+  "fields": [
+    {
+      "fieldName": "tipoPermissao",
+      "fieldType": "EnumTipoPermissao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "VISUALIZAR,OPERAR,ADMINISTRAR"
+    }
+  ],
+  "name": "PermissaoColaborador",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "colaboradorPJ",
+      "relationshipName": "colaborador",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

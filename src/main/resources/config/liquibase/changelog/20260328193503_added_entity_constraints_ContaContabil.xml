@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity ContaContabil.
+    -->
+    <changeSet id="20260328193503-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="moeda_carteira_id"
+                                 baseTableName="ctb_conta_contabil"
+                                 constraintName="fk_ctb_conta_contabil__moeda_carteira_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+    </changeSet>
+</databaseChangeLog>

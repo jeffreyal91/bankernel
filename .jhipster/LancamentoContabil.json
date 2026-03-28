@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193504"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "ctb_lancamento_contabil",
+  "fields": [
+    {
+      "fieldName": "valor",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoLancamento",
+      "fieldType": "EnumTipoLancamento",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "OPERACAO,ESTORNO,AJUSTE"
+    },
+    {
+      "fieldName": "sinalLancamento",
+      "fieldType": "EnumSinalLancamento",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEBITO,CREDITO"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "LancamentoContabil",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "contaContabil",
+      "relationshipName": "contaContabil",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

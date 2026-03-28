@@ -1,0 +1,11 @@
+id;tipo;situacao;valor_saque;valor_enviado;identificador_pagamento;identificador_ponta_a_ponta;campo_livre;saque_id;usuario_id
+1;MANUAL;DEVOLVIDO;26715.4;19777.13;tall quarrelsome;joyous typify;hm;1;1
+2;CHAVE;DEVOLVIDO;846.5;1551.81;who regular;with whoa;now;2;2
+3;MANUAL;REJEITADO;27898.2;10581.68;ah spear dispense;wasabi;before;3;1
+4;CHAVE;CONFIRMADO;10026.06;28431.68;till while;optimistically quinoa;swat too;4;2
+5;MANUAL;PROCESSADO;24175.88;3621.43;slide usefully yippee;when where overdue;pish soybean yak;5;2
+6;CHAVE;CONFIRMADO;32512.68;10681.59;exalt;dreamily tasty;affiliate;6;2
+7;CHAVE;INICIADO;21566.94;14029.67;pillbox until;unimpressively yet;while;7;1
+8;QR_CODE;INICIADO;4231.14;25725.4;prudent;inasmuch monthly meal;ripe subtract;8;2
+9;MANUAL;INICIADO;14884.34;23688.24;across poetry;formation;buck zowie incidentally;9;2
+10;QR_CODE;REJEITADO;27953.02;11285.51;now promptly;reapply;knottily flowery;10;2

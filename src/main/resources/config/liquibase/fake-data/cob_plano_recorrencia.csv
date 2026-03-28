@@ -1,0 +1,11 @@
+id;identificador_externo;numero_referencia;nome;descricao;valor;dias_teste;intervalo;parcelas;tentativas;ativo;metodo_pagamento;tipo_plano;usuario_id
+1;although impossible edge;fowl;oddly wherever;spring;1852.58;15145;13635;19031;2185;false;PIX;FIXO;1
+2;creamy store;but positively;round pish fortunately;bran knowledgeably;6024.17;19474;17865;2435;15469;false;BOLETO;VARIAVEL;2
+3;spotless anenst;unless;hence during;phew;15160.36;25382;29313;26874;23813;true;PIX;FIXO;1
+4;ha equal;subtle gee;selfish entomb;aha frightfully;31148.59;3084;32575;3781;25280;true;PIX;FIXO;1
+5;scarily stylish hence;indeed amid executor;after majestically;make overproduce outside;2709.23;17;5968;25063;1111;true;BOLETO;FIXO;1
+6;appreciate excepting supposing;modulo pro before;helplessly populist;what regularly commandeer;19680.44;1357;8099;7291;23182;false;PIX;FIXO;2
+7;fervently tomorrow;revoke formal;border;worth hutch though;28967.14;25777;23496;2667;14803;false;BOLETO;VARIAVEL;1
+8;lace popularity;confound;unless cleverly;supposing decouple;6105.55;31432;26200;21137;28124;false;BOLETO;VARIAVEL;2
+9;doubtfully pip;first;reclassify;drat;6865.02;11870;7931;16752;14338;true;PIX;VARIAVEL;2
+10;pertain finer poor;palatable;scratch best-seller;soupy propound inwardly;6997.74;4154;671;20995;759;false;BOLETO;VARIAVEL;1

@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193507"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "conf_bloqueio_operacao",
+  "fields": [
+    {
+      "fieldName": "tipoOperacao",
+      "fieldType": "EnumTipoOperacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEPOSITO_PIX,DEPOSITO_BOLETO,SAQUE_PIX_CHAVE,SAQUE_PIX_MANUAL,SAQUE_PIX_QR,SAQUE_BOLETO,SAQUE_TED,TRANSFERENCIA_INTERNA,COBRANCA_PIX,COBRANCA_BOLETO,ESTORNO_DEPOSITO,ESTORNO_SAQUE"
+    },
+    {
+      "fieldName": "diaSemana",
+      "fieldType": "EnumDiaSemana",
+      "fieldValues": "SEGUNDA,TERCA,QUARTA,QUINTA,SEXTA,SABADO,DOMINGO"
+    },
+    {
+      "fieldName": "horaInicio",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "5"
+    },
+    {
+      "fieldName": "horaFim",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "5"
+    },
+    {
+      "fieldName": "motivo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoExecucao",
+      "fieldType": "EnumTipoExecucao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MANUAL,AUTOMATICO"
+    }
+  ],
+  "name": "BloqueioOperacao",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,117 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193454"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "saq_saque",
+  "fields": [
+    {
+      "fieldName": "valorSaque",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorEnviado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "tipoSaque",
+      "fieldType": "EnumTipoSaque",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PIX_CHAVE,PIX_MANUAL,PIX_QR,BOLETO,TED"
+    },
+    {
+      "fieldName": "situacaoSaque",
+      "fieldType": "EnumStatusSaque",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,EM_PROCESSAMENTO,CONFIRMADO,REJEITADO,CANCELADO,ESTORNADO"
+    },
+    {
+      "fieldName": "numeroReferencia",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "motivoRejeicao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "contabilizado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeUsuarioFixo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Saque",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacaoEstorno",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "contaBancaria",
+      "relationshipName": "contaBancariaDestino",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "escritorio",
+      "relationshipName": "escritorio",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,71 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193455"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "saq_saque_pix",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoSaquePix",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CHAVE,MANUAL,QR_CODE"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusSaquePix",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "INICIADO,PROCESSADO,CONFIRMADO,REJEITADO,DEVOLVIDO"
+    },
+    {
+      "fieldName": "valorSaque",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorEnviado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "identificadorPagamento",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "identificadorPontaAPonta",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "campoLivre",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    }
+  ],
+  "name": "SaquePix",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "saque",
+      "relationshipName": "saque",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,11 @@
+id;tipo_operacao;dia_semana;hora_inicio;hora_fim;motivo;ativo;tipo_execucao
+1;DEPOSITO_PIX;SABADO;final;for;meaty near;false;MANUAL
+2;SAQUE_PIX_MANUAL;QUARTA;after;sting;regular or shy;true;MANUAL
+3;DEPOSITO_PIX;TERCA;fooey;fraud;wrongly powerful;true;MANUAL
+4;SAQUE_PIX_CHAVE;SEGUNDA;owlis;mooch;wolf violently obedient;false;MANUAL
+5;ESTORNO_SAQUE;QUARTA;instr;er in;surprised;true;AUTOMATICO
+6;ESTORNO_SAQUE;QUINTA;indee;gah d;speedily ick while;false;MANUAL
+7;ESTORNO_DEPOSITO;SEXTA;than ;befor;icebreaker sweetly;true;AUTOMATICO
+8;SAQUE_TED;DOMINGO;but;modul;hm feminize;false;AUTOMATICO
+9;SAQUE_TED;QUARTA;blue ;wasab;yet;false;AUTOMATICO
+10;COBRANCA_BOLETO;DOMINGO;petti;chart;nor;true;MANUAL

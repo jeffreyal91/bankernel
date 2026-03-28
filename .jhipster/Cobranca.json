@@ -1,0 +1,136 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193500"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "cob_cobranca",
+  "fields": [
+    {
+      "fieldName": "valor",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorCreditado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "valorCreditadoCarteira",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "idProdutoExterno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "nomeProdutoExterno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusCobranca",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,EM_PROCESSAMENTO,APROVADO,REJEITADO,CANCELADO,EXPIRADO,ESTORNADO"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoCobranca",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PIX,BOLETO"
+    },
+    {
+      "fieldName": "descontoGeral",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tipoDesconto",
+      "fieldType": "EnumTipoDesconto",
+      "fieldValues": "FIXO,PERCENTUAL"
+    },
+    {
+      "fieldName": "contabilizado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeUsuarioFixo",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "chaveCobranca",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "identificadorExterno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "retornoNotificado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Cobranca",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "transacao",
+      "relationshipName": "transacao",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteiraCreditada",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "linkCobranca",
+      "relationshipName": "linkCobranca",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,11 @@
+id;valor_enviado;valor_recebido;descricao;estornada;tipo_transacao;tipo_pagamento;status;ativa;tipo_entidade_origem;id_entidade_origem
+1;31386;19790.66;jittery why;false;SAQUE;BOLETO;ESTORNADA;true;boo;25998
+2;13605.8;5721.67;bah;false;DEPOSITO;INTERNO;CANCELADA;false;dilate alb drat;31783
+3;2741.76;24135.81;mobility very breastplate;false;TRANSFERENCIA;PIX;ESTORNADA;true;override;27570
+4;11172.95;22411.74;measly;false;SAQUE;TED;APROVADA;true;tall intrigue;26750
+5;16878.89;5959.34;wisely remarkable despite;true;TRANSFERENCIA;INTERNO;APROVADA;true;why excepting gastropod;15405
+6;728.19;25629.52;hence minion;true;TRANSFERENCIA;INTERNO;ESTORNADA;true;clueless deep late;30190
+7;4930.01;24866.15;oof even;false;TRANSFERENCIA;PIX;ESTORNADA;true;sunbathe avaricious;26456
+8;12838.77;29396.64;fleck;false;TRANSFERENCIA;INTERNO;REJEITADA;true;uh-huh as;32445
+9;6503.21;20297.15;cornet obvious;false;SAQUE;INTERNO;PENDENTE;true;without frankly resort;25388
+10;2498.82;18966.23;enlightened minister who;true;TRANSFERENCIA;BOLETO;ESTORNADA;false;oval lest oof;5602

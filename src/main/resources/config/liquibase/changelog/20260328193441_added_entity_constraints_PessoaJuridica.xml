@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity PessoaJuridica.
+    -->
+    <changeSet id="20260328193441-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="moeda_principal_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__moeda_principal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car_moeda_carteira"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="contrato_social_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__contrato_social_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_documento"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="nacionalidade_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__nacionalidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_pais"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tipo_negocio_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__tipo_negocio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_tipo_negocio"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="plano_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__plano_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="conf_plano"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="escritorio_id"
+                                 baseTableName="pes_pessoa_juridica"
+                                 constraintName="fk_pes_pessoa_juridica__escritorio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ges_escritorio"
+                                 />
+    </changeSet>
+</databaseChangeLog>

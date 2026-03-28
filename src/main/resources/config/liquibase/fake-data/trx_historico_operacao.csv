@@ -1,0 +1,11 @@
+id;valor;saldo_apos;descricao;tipo_simbolo;numero_referencia;tipo_historico;status_historico;tipo_entidade_origem;id_entidade_origem;usuario_id;carteira_id
+1;9369.36;2411.02;hmph uneven;SAIDA;to;SAQUE;PENDENTE;uh-huh;30630;1;1
+2;4380.74;11720.95;invite;SAIDA;plain;TRANSFERENCIA_RECEBIDA;CONFIRMADO;the circa;26659;2;2
+3;19838.25;32642.51;abseil;ENTRADA;whose;DEPOSITO;CONFIRMADO;beside;639;2;3
+4;2147.13;28796.28;cool ouch those;ENTRADA;palatable sunny when;DEPOSITO;PENDENTE;loftily seemingly encode;26893;1;4
+5;1797.82;3964.48;astonishing past positively;SAIDA;gah resource;ESTORNO;CONFIRMADO;overconfidently whoever despite;21074;2;5
+6;22122.14;31530.35;enthusiastically encouragement;SAIDA;below throughout memorise;DEPOSITO;CONFIRMADO;of admired suspiciously;19366;2;6
+7;21448.45;4921.38;delirious unfreeze or;SAIDA;coordination;TRANSFERENCIA_ENVIADA;CANCELADO;manner;27677;2;7
+8;1287.93;29193.52;than exploration;SAIDA;which towards upsell;COBRANCA;CONFIRMADO;reconsideration hmph;23953;2;8
+9;27229.21;24607.81;whoever since;ENTRADA;psst;TRANSFERENCIA_ENVIADA;CANCELADO;godfather excluding;16580;1;9
+10;1629.15;10617.36;deceivingly until throughout;ENTRADA;wry ecliptic;TRANSFERENCIA_RECEBIDA;CANCELADO;tensely amongst under;12590;1;10

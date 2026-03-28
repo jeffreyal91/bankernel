@@ -1,0 +1,71 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193512"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "itg_registro_integracao",
+  "fields": [
+    {
+      "fieldName": "fornecedor",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "tipoIntegracao",
+      "fieldType": "EnumTipoIntegracao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PIX,BOLETO,TED,NOTIFICACAO"
+    },
+    {
+      "fieldName": "operacao",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "corpoRequisicao",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "corpoResposta",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "codigoHttp",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sucesso",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "mensagemErro",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "duracaoMilissegundos",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tipoEntidadeOrigem",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "idEntidadeOrigem",
+      "fieldType": "Long"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "RegistroIntegracao",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,130 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193459"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "cob_link_cobranca",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "chaveAcesso",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "chaveApi",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "urlRetorno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "urlPagamentoAprovado",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "urlPagamentoCancelado",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "urlPagamentoRejeitado",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "2000"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoLinkCobranca",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "UNICO,RECORRENTE,DOACAO"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusLinkCobranca",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ATIVO,INATIVO,BLOQUEADO,EXPIRADO"
+    },
+    {
+      "fieldName": "dataInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dataFim",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "desconto",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tipoDesconto",
+      "fieldType": "EnumTipoDesconto",
+      "fieldValues": "FIXO,PERCENTUAL"
+    },
+    {
+      "fieldName": "valorMinimoPagamento",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "identificadorExterno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "numeroReferencia",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "bloqueado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LinkCobranca",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaCarteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

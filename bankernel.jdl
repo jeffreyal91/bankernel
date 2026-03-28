@@ -1,0 +1,786 @@
+/**
+ * BanKernel - Kernel Bancário Digital
+ * Arquivo JDL para geração via JHipster 8.x
+ *
+ * Todas as entidades e campos em português.
+ * Valores monetários: BigDecimal
+ * Auditoria: via JHipster AbstractAuditingEntity
+ */
+
+application {
+    config {
+        baseName bankernel
+        applicationType monolith
+        packageName com.bankernel
+        authenticationType jwt
+        databaseType sql
+        devDatabaseType postgresql
+        prodDatabaseType postgresql
+        buildTool maven
+        cacheProvider ehcache
+        enableHibernateCache true
+        clientFramework no
+        serverPort 8080
+        enableSwaggerCodegen true
+        nativeLanguage pt-br
+        languages [pt-br, en]
+    }
+    entities *
+}
+
+// ============================================================
+// ENUMERAÇÕES
+// ============================================================
+
+enum EnumGenero {
+    MASCULINO, FEMININO, OUTRO, NAO_INFORMADO
+}
+enum EnumNivelRisco {
+    BAIXO, MEDIO, ALTO, CRITICO
+}
+enum EnumStatusPessoa {
+    ATIVO, INATIVO, BLOQUEADO, PENDENTE
+}
+enum EnumTipoEndereco {
+    RESIDENCIAL, COMERCIAL, CORRESPONDENCIA
+}
+enum EnumTipoDocumentoPJ {
+    CNPJ, INSCRICAO_ESTADUAL, INSCRICAO_MUNICIPAL
+}
+enum EnumTipoPermissao {
+    VISUALIZAR, OPERAR, ADMINISTRAR
+}
+enum EnumCodigoMoeda {
+    BRL, USD, EUR, GBP
+}
+enum EnumTipoTransacao {
+    DEPOSITO, SAQUE, TRANSFERENCIA, COBRANCA, ESTORNO
+}
+enum EnumTipoPagamento {
+    PIX, BOLETO, TED, INTERNO
+}
+enum EnumStatusTransacao {
+    PENDENTE, EM_PROCESSAMENTO, APROVADA, REJEITADA, CANCELADA, ESTORNADA
+}
+enum EnumTipoSimbolo {
+    ENTRADA, SAIDA
+}
+enum EnumTipoHistorico {
+    DEPOSITO, SAQUE, TRANSFERENCIA_ENVIADA, TRANSFERENCIA_RECEBIDA, COBRANCA, ESTORNO
+}
+enum EnumStatusHistorico {
+    PENDENTE, CONFIRMADO, CANCELADO
+}
+enum EnumTipoOperacao {
+    DEPOSITO_PIX, DEPOSITO_BOLETO,
+    SAQUE_PIX_CHAVE, SAQUE_PIX_MANUAL, SAQUE_PIX_QR, SAQUE_BOLETO, SAQUE_TED,
+    TRANSFERENCIA_INTERNA,
+    COBRANCA_PIX, COBRANCA_BOLETO,
+    ESTORNO_DEPOSITO, ESTORNO_SAQUE
+}
+enum EnumSinalContabil {
+    POSITIVO, NEGATIVO
+}
+enum EnumTipoDeposito {
+    PIX, BOLETO
+}
+enum EnumStatusDeposito {
+    PENDENTE, EM_PROCESSAMENTO, APROVADO, REJEITADO, CANCELADO
+}
+enum EnumTipoDepositoPix {
+    QR_ESTATICO, QR_DINAMICO, QR_DINAMICO_VENCIMENTO
+}
+enum EnumStatusDepositoPix {
+    EM_PROCESSO, PENDENTE, APROVADO, REJEITADO, CANCELADO, EXPIRADO
+}
+enum EnumTipoDepositoBoleto {
+    COBRANCA, DEPOSITO
+}
+enum EnumStatusDepositoBoleto {
+    CRIADO, EM_PROCESSO, PENDENTE, PAGO, APROVADO, REJEITADO, CANCELADO
+}
+enum EnumTipoSaque {
+    PIX_CHAVE, PIX_MANUAL, PIX_QR, BOLETO, TED
+}
+enum EnumStatusSaque {
+    PENDENTE, EM_PROCESSAMENTO, CONFIRMADO, REJEITADO, CANCELADO, ESTORNADO
+}
+enum EnumTipoSaquePix {
+    CHAVE, MANUAL, QR_CODE
+}
+enum EnumStatusSaquePix {
+    INICIADO, PROCESSADO, CONFIRMADO, REJEITADO, DEVOLVIDO
+}
+enum EnumTipoSaqueBoleto {
+    PAGAMENTO, TRANSFERENCIA
+}
+enum EnumStatusSaqueBoleto {
+    CRIADO, EM_PROCESSAMENTO, EFETIVADO, CANCELADO, REJEITADO
+}
+enum EnumTipoConta {
+    CORRENTE, POUPANCA, SALARIO, PAGAMENTO
+}
+enum EnumTipoChaveTransferencia {
+    EMAIL, CPF, TELEFONE, CONTA
+}
+enum EnumStatusTransferencia {
+    PENDENTE, APROVADA, REJEITADA, CANCELADA
+}
+enum EnumTipoLinkCobranca {
+    UNICO, RECORRENTE, DOACAO
+}
+enum EnumStatusLinkCobranca {
+    ATIVO, INATIVO, BLOQUEADO, EXPIRADO
+}
+enum EnumStatusCobranca {
+    PENDENTE, EM_PROCESSAMENTO, APROVADO, REJEITADO, CANCELADO, EXPIRADO, ESTORNADO
+}
+enum EnumTipoCobranca {
+    PIX, BOLETO
+}
+enum EnumTipoDesconto {
+    FIXO, PERCENTUAL
+}
+enum EnumMetodoPagamentoRecorrencia {
+    PIX, BOLETO
+}
+enum EnumTipoPlanoRecorrencia {
+    FIXO, VARIAVEL
+}
+enum EnumTipoAssinatura {
+    PADRAO, PERSONALIZADA
+}
+enum EnumTipoPagamentoAssinatura {
+    PIX, BOLETO
+}
+enum EnumStatusAssinatura {
+    ATIVA, CANCELADA, BLOQUEADA, FINALIZADA, AGUARDANDO_PAGAMENTO
+}
+enum EnumTipoContaContabil {
+    ATIVO, PASSIVO, RECEITA, DESPESA
+}
+enum EnumCategoriaContaContabil {
+    OPERACIONAL, FINANCEIRA, ADMINISTRATIVA
+}
+enum EnumTipoLancamento {
+    OPERACAO, ESTORNO, AJUSTE
+}
+enum EnumSinalLancamento {
+    DEBITO, CREDITO
+}
+enum EnumTipoConfiguracao {
+    STRING, INTEGER, BOOLEAN, BIG_DECIMAL
+}
+enum EnumDiaSemana {
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
+}
+enum EnumTipoExecucao {
+    MANUAL, AUTOMATICO
+}
+enum EnumTipoNotificacao {
+    EMAIL, PUSH, SMS, INTERNA
+}
+enum EnumStatusNotificacao {
+    PENDENTE, ENVIADA, FALHA, LIDA
+}
+enum EnumCanalNotificacao {
+    EMAIL, PUSH, SMS, INTERNO
+}
+enum EnumTipoIntegracao {
+    PIX, BOLETO, TED, NOTIFICACAO
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO REFERÊNCIA
+// ============================================================
+
+entity Pais(ref_pais) {
+    codigo String required maxlength(3)
+    nome String required maxlength(100)
+    ativo Boolean required
+}
+
+entity Profissao(ref_profissao) {
+    nome String required maxlength(100)
+    ativa Boolean required
+}
+
+entity TipoNegocio(ref_tipo_negocio) {
+    nome String required maxlength(100)
+    ativo Boolean required
+}
+
+entity BancoReferencia(ref_banco) {
+    codigo String required maxlength(10)
+    nome String required maxlength(100)
+    ispb String maxlength(8)
+    ativo Boolean required
+}
+
+entity Documento(ref_documento) {
+    nome String required maxlength(200)
+    tipoArquivo String maxlength(50)
+    endereco String maxlength(500)
+    tamanho Long
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO USUÁRIO
+// ============================================================
+
+entity PessoaFisica(pes_pessoa_fisica) {
+    cpf String required unique maxlength(11)
+    nomeCompleto String required maxlength(200)
+    nomeSocial String maxlength(200)
+    dataNascimento LocalDate required
+    genero EnumGenero
+    nomeMae String maxlength(200)
+    telefone String required maxlength(20)
+    telefoneVerificado Boolean required
+    nivelRisco EnumNivelRisco required
+    situacao EnumStatusPessoa required
+    bloqueioSaque Boolean required
+}
+
+entity PessoaJuridica(pes_pessoa_juridica) {
+    cnpj String required unique maxlength(14)
+    razaoSocial String required maxlength(200)
+    nomeFantasia String maxlength(200)
+    telefone String required maxlength(20)
+    sitioWeb String maxlength(500)
+    descricao String maxlength(2000)
+    dataFundacao LocalDate
+    capitalSocial BigDecimal
+    faturamentoAnual BigDecimal
+    mediaMovimentacaoMensal BigDecimal
+    tipoDocumento EnumTipoDocumentoPJ
+    regimeTributario String maxlength(100)
+    codigoNaturezaJuridica String maxlength(20)
+    atividadePrincipal String maxlength(200)
+    empresaAtiva Boolean required
+    nivelRisco EnumNivelRisco required
+    situacao EnumStatusPessoa required
+    bloqueioSaque Boolean required
+    cpfRepresentanteLegal String maxlength(11)
+    numeroRegistro String maxlength(50)
+}
+
+entity Endereco(pes_endereco) {
+    cep String required maxlength(8)
+    logradouro String required maxlength(200)
+    numero String required maxlength(20)
+    complemento String maxlength(100)
+    bairro String required maxlength(100)
+    cidade String required maxlength(100)
+    estado String required maxlength(2)
+    tipoEndereco EnumTipoEndereco required
+    principal Boolean required
+    latitude BigDecimal
+    longitude BigDecimal
+}
+
+entity ColaboradorPJ(pes_colaborador_pj) {
+    ativo Boolean required
+    departamento String maxlength(100)
+}
+
+entity PermissaoColaborador(pes_permissao_colaborador) {
+    tipoPermissao EnumTipoPermissao required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO CARTEIRA
+// ============================================================
+
+entity Moeda(moe_moeda) {
+    codigoMoeda EnumCodigoMoeda required
+    nome String required maxlength(50)
+    descricao String maxlength(200)
+    ativa Boolean required
+}
+
+entity MoedaCarteira(car_moeda_carteira) {
+    codigo String required unique maxlength(10)
+    nome String required maxlength(50)
+    descricao String maxlength(200)
+    fatorConversao BigDecimal required
+    ativa Boolean required
+    principal Boolean required
+    casasDecimais Integer required
+    separadorMilhar String maxlength(1)
+    separadorDecimal String maxlength(1)
+    simbolo String maxlength(5)
+}
+
+entity Carteira(car_carteira) {
+    saldo BigDecimal required
+    limiteNegativo BigDecimal required
+    valorCongelado BigDecimal required
+    numeroConta String required unique maxlength(20)
+    ativa Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO TRANSAÇÃO
+// ============================================================
+
+entity TipoOperacao(mov_tipo_operacao) {
+    codigo EnumTipoOperacao required
+    nome String required maxlength(100)
+    descricao String maxlength(500)
+    ativo Boolean required
+    sinalCredito EnumSinalContabil required
+    sinalDebito EnumSinalContabil required
+}
+
+entity Transacao(mov_transacao) {
+    valorEnviado BigDecimal required
+    valorRecebido BigDecimal required
+    descricao String maxlength(500)
+    estornada Boolean required
+    tipoTransacao EnumTipoTransacao required
+    tipoPagamento EnumTipoPagamento
+    situacao EnumStatusTransacao required
+    ativa Boolean required
+    tipoEntidadeOrigem String maxlength(50)
+    idEntidadeOrigem Long
+}
+
+entity HistoricoOperacao(mov_historico_operacao) {
+    valor BigDecimal required
+    saldoApos BigDecimal required
+    descricao String maxlength(500)
+    tipoSimbolo EnumTipoSimbolo required
+    numeroReferencia String maxlength(50)
+    tipoHistorico EnumTipoHistorico required
+    situacaoHistorico EnumStatusHistorico required
+    tipoEntidadeOrigem String maxlength(50)
+    idEntidadeOrigem Long
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO DEPÓSITO
+// ============================================================
+
+entity Deposito(dep_deposito) {
+    valor BigDecimal required
+    valorCreditado BigDecimal
+    valorSaldoCarteira BigDecimal
+    tipoDeposito EnumTipoDeposito required
+    situacaoDeposito EnumStatusDeposito required
+    numeroReferencia String required maxlength(50)
+    referenciaExterna String maxlength(100)
+    descricao String maxlength(500)
+    motivoRejeicao String maxlength(500)
+    contabilizado Boolean required
+    nomeUsuarioFixo String maxlength(200)
+    numeroParcela Integer
+}
+
+entity DepositoPix(dep_deposito_pix) {
+    tipo EnumTipoDepositoPix required
+    situacao EnumStatusDepositoPix required
+    valorOriginal BigDecimal required
+    valorCreditado BigDecimal
+    valorRecebido BigDecimal
+    codigoQr String maxlength(500)
+    identificadorTransacao String maxlength(100)
+    identificadorPontaAPonta String maxlength(100)
+    pagadorNome String maxlength(200)
+    pagadorCpf String maxlength(11)
+    pagadorCnpj String maxlength(14)
+    dataRecebimento Instant
+    contabilizado Boolean required
+}
+
+entity DepositoBoleto(dep_deposito_boleto) {
+    tipo EnumTipoDepositoBoleto required
+    situacao EnumStatusDepositoBoleto required
+    codigoBarras String maxlength(50)
+    linhaDigitavel String maxlength(60)
+    valorOriginal BigDecimal required
+    valorCreditado BigDecimal
+    valorRecebido BigDecimal
+    pagadorNome String maxlength(200)
+    pagadorCpf String maxlength(11)
+    pagadorCnpj String maxlength(14)
+    dataVencimento LocalDate
+    dataRecebimento Instant
+    contabilizado Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO SAQUE
+// ============================================================
+
+entity Saque(saq_saque) {
+    valorSaque BigDecimal required
+    valorEnviado BigDecimal
+    descricao String maxlength(500)
+    tipoSaque EnumTipoSaque required
+    situacaoSaque EnumStatusSaque required
+    numeroReferencia String required maxlength(50)
+    motivoRejeicao String maxlength(500)
+    contabilizado Boolean required
+    nomeUsuarioFixo String maxlength(200)
+}
+
+entity SaquePix(saq_saque_pix) {
+    tipo EnumTipoSaquePix required
+    situacao EnumStatusSaquePix required
+    valorSaque BigDecimal required
+    valorEnviado BigDecimal
+    identificadorPagamento String maxlength(100)
+    identificadorPontaAPonta String maxlength(100)
+    campoLivre String maxlength(200)
+}
+
+entity SaqueBoleto(saq_saque_boleto) {
+    tipo EnumTipoSaqueBoleto required
+    situacao EnumStatusSaqueBoleto required
+    valorSaque BigDecimal required
+    valorEnviado BigDecimal
+    codigoBarras String maxlength(50)
+    campoLivre String maxlength(200)
+}
+
+entity ContaBancaria(saq_conta_bancaria) {
+    nomeTitular String required maxlength(200)
+    numeroConta String required maxlength(30)
+    agencia String maxlength(10)
+    nomeBanco String maxlength(100)
+    codigoBanco String maxlength(10)
+    ispb String maxlength(8)
+    codigoSwift String maxlength(20)
+    tipoConta EnumTipoConta required
+    ativa Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO TRANSFERÊNCIA
+// ============================================================
+
+entity Transferencia(trf_transferencia) {
+    valor BigDecimal required
+    chaveInterna String maxlength(100)
+    tipoChave EnumTipoChaveTransferencia required
+    situacao EnumStatusTransferencia required
+    descricao String maxlength(500)
+    motivoRejeicao String maxlength(500)
+    numeroReferencia String required maxlength(50)
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO COBRANÇA
+// ============================================================
+
+entity LinkCobranca(cob_link_cobranca) {
+    nome String required maxlength(200)
+    chaveAcesso String required maxlength(100)
+    chaveApi String maxlength(100)
+    urlRetorno String maxlength(2000)
+    urlPagamentoAprovado String maxlength(2000)
+    urlPagamentoCancelado String maxlength(2000)
+    urlPagamentoRejeitado String maxlength(2000)
+    tipo EnumTipoLinkCobranca required
+    situacao EnumStatusLinkCobranca required
+    dataInicio Instant
+    dataFim Instant
+    desconto BigDecimal
+    tipoDesconto EnumTipoDesconto
+    valorMinimoPagamento BigDecimal
+    identificadorExterno String maxlength(100)
+    numeroReferencia String maxlength(50)
+    ativo Boolean required
+    bloqueado Boolean required
+}
+
+entity Cobranca(cob_cobranca) {
+    valor BigDecimal required
+    valorCreditado BigDecimal
+    valorCreditadoCarteira BigDecimal
+    idProdutoExterno String maxlength(100)
+    nomeProdutoExterno String maxlength(200)
+    situacao EnumStatusCobranca required
+    tipo EnumTipoCobranca required
+    descontoGeral BigDecimal
+    tipoDesconto EnumTipoDesconto
+    contabilizado Boolean required
+    nomeUsuarioFixo String maxlength(200)
+    chaveCobranca String maxlength(100)
+    identificadorExterno String maxlength(100)
+    retornoNotificado Boolean required
+}
+
+entity PlanoRecorrencia(cob_plano_recorrencia) {
+    identificadorExterno String maxlength(100)
+    numeroReferencia String maxlength(50)
+    nome String required maxlength(200)
+    descricao String maxlength(500)
+    valor BigDecimal required
+    diasTeste Integer
+    intervalo Integer required
+    parcelas Integer
+    tentativas Integer required
+    ativo Boolean required
+    metodoPagamento EnumMetodoPagamentoRecorrencia required
+    tipoPlano EnumTipoPlanoRecorrencia required
+}
+
+entity AssinaturaRecorrencia(cob_assinatura_recorrencia) {
+    numeroOrdem String maxlength(50)
+    numeroReferencia String maxlength(50)
+    devedorEmail String maxlength(200)
+    devedorDocumento String maxlength(14)
+    devedorNome String maxlength(200)
+    devedorTelefone String maxlength(20)
+    devedorCep String maxlength(8)
+    devedorUf String maxlength(2)
+    devedorCidade String maxlength(100)
+    devedorBairro String maxlength(100)
+    devedorEndereco String maxlength(200)
+    ativo Boolean required
+    idProdutoExterno String maxlength(100)
+    identificadorExterno String maxlength(100)
+    nomeProdutoExterno String maxlength(200)
+    tipo EnumTipoAssinatura required
+    tipoPagamento EnumTipoPagamentoAssinatura required
+    situacao EnumStatusAssinatura required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO CONTABILIDADE
+// ============================================================
+
+entity ContaContabil(ctb_conta_contabil) {
+    codigo String required unique maxlength(20)
+    nome String required maxlength(100)
+    saldo BigDecimal required
+    descricao String maxlength(500)
+    tipoContaContabil EnumTipoContaContabil required
+    categoriaContaContabil EnumCategoriaContaContabil required
+    ativa Boolean required
+}
+
+entity LancamentoContabil(ctb_lancamento_contabil) {
+    valor BigDecimal required
+    tipoLancamento EnumTipoLancamento required
+    sinalLancamento EnumSinalLancamento required
+    ativo Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO CONFIGURAÇÃO
+// ============================================================
+
+entity Plano(conf_plano) {
+    nome String required maxlength(100)
+    descricao String maxlength(500)
+    ativo Boolean required
+    padrao Boolean required
+}
+
+entity ConfiguracaoSistema(conf_configuracao_sistema) {
+    chave String required unique maxlength(100)
+    valor String required maxlength(500)
+    descricao String maxlength(500)
+    tipo EnumTipoConfiguracao required
+    modulo String required maxlength(50)
+    ativa Boolean required
+}
+
+entity BloqueioOperacao(conf_bloqueio_operacao) {
+    tipoOperacao EnumTipoOperacao required
+    diaSemana EnumDiaSemana
+    horaInicio String maxlength(5)
+    horaFim String maxlength(5)
+    motivo String maxlength(500)
+    ativo Boolean required
+    tipoExecucao EnumTipoExecucao required
+}
+
+entity Feriado(conf_feriado) {
+    data LocalDate required
+    descricao String required maxlength(200)
+    ativo Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO ADMIN
+// ============================================================
+
+entity Escritorio(ges_escritorio) {
+    nome String required maxlength(100)
+    descricao String maxlength(500)
+    ativo Boolean required
+}
+
+entity Administrador(ges_administrador) {
+    ativo Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO NOTIFICAÇÃO
+// ============================================================
+
+entity Notificacao(ntf_notificacao) {
+    titulo String required maxlength(200)
+    mensagem String required maxlength(2000)
+    tipo EnumTipoNotificacao required
+    situacao EnumStatusNotificacao required
+    canal EnumCanalNotificacao required
+    lida Boolean required
+}
+
+// ============================================================
+// ENTIDADES - MÓDULO INTEGRAÇÃO
+// ============================================================
+
+entity RegistroIntegracao(itg_registro_integracao) {
+    fornecedor String required maxlength(50)
+    tipoIntegracao EnumTipoIntegracao required
+    operacao String required maxlength(50)
+    corpoRequisicao TextBlob
+    corpoResposta TextBlob
+    codigoHttp Integer
+    sucesso Boolean required
+    mensagemErro String maxlength(1000)
+    duracaoMilissegundos Long
+    tipoEntidadeOrigem String maxlength(50)
+    idEntidadeOrigem Long
+}
+
+// ============================================================
+// RELACIONAMENTOS
+// ============================================================
+
+relationship OneToOne {
+    PessoaFisica{usuario(login) required} to User with builtInEntity
+    PessoaFisica{moedaPrincipal(codigo)} to MoedaCarteira
+    PessoaJuridica{usuario(login) required} to User with builtInEntity
+    PessoaJuridica{moedaPrincipal(codigo)} to MoedaCarteira
+    PessoaJuridica{contratoSocial(nome)} to Documento
+    ColaboradorPJ{usuario(login) required} to User with builtInEntity
+    Administrador{usuario(login) required} to User with builtInEntity
+}
+
+relationship ManyToOne {
+    PessoaFisica{nacionalidade(nome)} to Pais
+    PessoaFisica{profissao(nome)} to Profissao
+    PessoaFisica{plano(nome)} to Plano
+    PessoaFisica{escritorio(nome)} to Escritorio
+    PessoaJuridica{nacionalidade(nome)} to Pais
+    PessoaJuridica{tipoNegocio(nome)} to TipoNegocio
+    PessoaJuridica{plano(nome)} to Plano
+    PessoaJuridica{escritorio(nome)} to Escritorio
+    Endereco{usuario(login)} to User with builtInEntity
+    ColaboradorPJ{pessoaJuridica(razaoSocial) required} to PessoaJuridica
+    PermissaoColaborador{colaborador required} to ColaboradorPJ
+    PermissaoColaborador{carteira(numeroConta)} to Carteira
+}
+
+relationship ManyToOne {
+    MoedaCarteira{moeda(nome) required} to Moeda
+    Carteira{moedaCarteira(codigo) required} to MoedaCarteira
+    Carteira{usuario(login) required} to User with builtInEntity
+}
+
+relationship ManyToOne {
+    TipoOperacao{contaCredito(codigo)} to ContaContabil
+    TipoOperacao{contaDebito(codigo)} to ContaContabil
+    TipoOperacao{moedaCarteira(codigo)} to MoedaCarteira
+    Transacao{carteiraOrigem(numeroConta)} to Carteira
+    Transacao{carteiraDestino(numeroConta)} to Carteira
+    Transacao{moedaOrigem(codigo)} to MoedaCarteira
+    Transacao{moedaDestino(codigo)} to MoedaCarteira
+    HistoricoOperacao{transacao} to Transacao
+    HistoricoOperacao{usuario(login) required} to User with builtInEntity
+    HistoricoOperacao{carteira(numeroConta) required} to Carteira
+}
+
+relationship OneToOne {
+    DepositoPix{deposito required} to Deposito
+    DepositoBoleto{deposito required} to Deposito
+}
+
+relationship ManyToOne {
+    Deposito{transacao} to Transacao
+    Deposito{carteira(numeroConta) required} to Carteira
+    Deposito{moedaCarteira(codigo) required} to MoedaCarteira
+    Deposito{usuario(login) required} to User with builtInEntity
+    Deposito{contaBancaria} to ContaBancaria
+    DepositoPix{carteira(numeroConta) required} to Carteira
+    DepositoPix{usuario(login) required} to User with builtInEntity
+    DepositoBoleto{carteira(numeroConta) required} to Carteira
+    DepositoBoleto{usuario(login) required} to User with builtInEntity
+}
+
+relationship OneToOne {
+    SaquePix{saque required} to Saque
+    SaqueBoleto{saque required} to Saque
+}
+
+relationship ManyToOne {
+    Saque{transacao} to Transacao
+    Saque{transacaoEstorno} to Transacao
+    Saque{carteira(numeroConta) required} to Carteira
+    Saque{moedaCarteira(codigo) required} to MoedaCarteira
+    Saque{contaBancariaDestino} to ContaBancaria
+    Saque{usuario(login) required} to User with builtInEntity
+    Saque{escritorio(nome)} to Escritorio
+    SaquePix{usuario(login) required} to User with builtInEntity
+    SaqueBoleto{usuario(login) required} to User with builtInEntity
+    ContaBancaria{usuario(login) required} to User with builtInEntity
+    ContaBancaria{pais(nome)} to Pais
+    ContaBancaria{moeda(nome)} to Moeda
+}
+
+relationship ManyToOne {
+    Transferencia{transacao} to Transacao
+    Transferencia{usuarioOrigem(login) required} to User with builtInEntity
+    Transferencia{usuarioDestino(login)} to User with builtInEntity
+    Transferencia{carteiraOrigem(numeroConta) required} to Carteira
+    Transferencia{carteiraDestino(numeroConta)} to Carteira
+    Transferencia{moedaCarteira(codigo) required} to MoedaCarteira
+}
+
+relationship ManyToOne {
+    Cobranca{transacao} to Transacao
+    LinkCobranca{usuario(login) required} to User with builtInEntity
+    LinkCobranca{moedaCarteira(codigo) required} to MoedaCarteira
+    Cobranca{usuario(login) required} to User with builtInEntity
+    Cobranca{carteira(numeroConta) required} to Carteira
+    Cobranca{carteiraCreditada(numeroConta)} to Carteira
+    Cobranca{moedaCarteira(codigo) required} to MoedaCarteira
+    Cobranca{linkCobranca(nome)} to LinkCobranca
+    PlanoRecorrencia{usuario(login) required} to User with builtInEntity
+    PlanoRecorrencia{linkCobranca(nome)} to LinkCobranca
+    AssinaturaRecorrencia{planoRecorrencia(nome) required} to PlanoRecorrencia
+    AssinaturaRecorrencia{usuario(login) required} to User with builtInEntity
+    AssinaturaRecorrencia{linkCobranca(nome)} to LinkCobranca
+}
+
+relationship ManyToOne {
+    ContaContabil{moedaCarteira(codigo) required} to MoedaCarteira
+    LancamentoContabil{transacao} to Transacao
+    LancamentoContabil{contaContabil(codigo) required} to ContaContabil
+}
+
+relationship ManyToOne {
+    Administrador{escritorio(nome)} to Escritorio
+}
+
+relationship ManyToOne {
+    Notificacao{usuario(login) required} to User with builtInEntity
+}
+
+// ============================================================
+// OPÇÕES
+// ============================================================
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass
+filter Transacao, Deposito, Saque, Transferencia, Cobranca, HistoricoOperacao,
+       PessoaFisica, PessoaJuridica, Carteira, ContaBancaria, RegistroIntegracao,
+       Notificacao, LancamentoContabil, ContaContabil

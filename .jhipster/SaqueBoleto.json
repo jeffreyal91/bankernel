@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193456"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "saq_saque_boleto",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoSaqueBoleto",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PAGAMENTO,TRANSFERENCIA"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusSaqueBoleto",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CRIADO,EM_PROCESSAMENTO,EFETIVADO,CANCELADO,REJEITADO"
+    },
+    {
+      "fieldName": "valorSaque",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorEnviado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "codigoBarras",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "campoLivre",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    }
+  ],
+  "name": "SaqueBoleto",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "saque",
+      "relationshipName": "saque",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

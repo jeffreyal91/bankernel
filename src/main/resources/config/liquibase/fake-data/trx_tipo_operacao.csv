@@ -1,0 +1,11 @@
+id;codigo;nome;descricao;ativo;sinal_credito;sinal_debito
+1;SAQUE_BOLETO;fast midst;ditch when than;false;POSITIVO;NEGATIVO
+2;COBRANCA_BOLETO;because bah;fax;true;POSITIVO;NEGATIVO
+3;SAQUE_TED;gosh brisk;that coliseum alongside;true;POSITIVO;NEGATIVO
+4;COBRANCA_BOLETO;milky safeguard instead;alb;false;NEGATIVO;POSITIVO
+5;DEPOSITO_PIX;eggplant worldly ah;gadzooks trusting ad;false;NEGATIVO;NEGATIVO
+6;SAQUE_BOLETO;however commonly;unlike;false;POSITIVO;POSITIVO
+7;DEPOSITO_PIX;impolite than dally;terrorise;true;NEGATIVO;POSITIVO
+8;COBRANCA_PIX;bank;bah assail;true;POSITIVO;NEGATIVO
+9;SAQUE_PIX_QR;yum correctly;faithfully finally giggle;false;POSITIVO;NEGATIVO
+10;COBRANCA_BOLETO;aha;limited ugh;false;NEGATIVO;NEGATIVO

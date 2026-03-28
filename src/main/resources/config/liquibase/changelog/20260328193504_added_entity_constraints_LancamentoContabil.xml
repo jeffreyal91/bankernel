@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity LancamentoContabil.
+    -->
+    <changeSet id="20260328193504-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="transacao_id"
+                                 baseTableName="ctb_lancamento_contabil"
+                                 constraintName="fk_ctb_lancamento_contabil__transacao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mov_transacao"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conta_contabil_id"
+                                 baseTableName="ctb_lancamento_contabil"
+                                 constraintName="fk_ctb_lancamento_contabil__conta_contabil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ctb_conta_contabil"
+                                 />
+    </changeSet>
+</databaseChangeLog>

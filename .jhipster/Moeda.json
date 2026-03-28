@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193445"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "moe_moeda",
+  "fields": [
+    {
+      "fieldName": "codigoMoeda",
+      "fieldType": "EnumCodigoMoeda",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "BRL,USD,EUR,GBP"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "ativa",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Moeda",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

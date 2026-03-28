@@ -1,0 +1,185 @@
+package com.bankernel.web.rest;
+
+import com.bankernel.repository.BloqueioOperacaoRepository;
+import com.bankernel.service.BloqueioOperacaoService;
+import com.bankernel.service.dto.BloqueioOperacaoDTO;
+import com.bankernel.web.rest.errors.BadRequestAlertException;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import tech.jhipster.web.util.HeaderUtil;
+import tech.jhipster.web.util.PaginationUtil;
+import tech.jhipster.web.util.ResponseUtil;
+
+/**
+ * REST controller for managing {@link com.bankernel.domain.BloqueioOperacao}.
+ */
+@RestController
+@RequestMapping("/api/bloqueio-operacaos")
+public class BloqueioOperacaoResource {
+
+    private static final Logger LOG = LoggerFactory.getLogger(BloqueioOperacaoResource.class);
+
+    private static final String ENTITY_NAME = "bloqueioOperacao";
+
+    @Value("${jhipster.clientApp.name}")
+    private String applicationName;
+
+    private final BloqueioOperacaoService bloqueioOperacaoService;
+
+    private final BloqueioOperacaoRepository bloqueioOperacaoRepository;
+
+    public BloqueioOperacaoResource(
+        BloqueioOperacaoService bloqueioOperacaoService,
+        BloqueioOperacaoRepository bloqueioOperacaoRepository
+    ) {
+        this.bloqueioOperacaoService = bloqueioOperacaoService;
+        this.bloqueioOperacaoRepository = bloqueioOperacaoRepository;
+    }
+
+    /**
+     * {@code POST  /bloqueio-operacaos} : Create a new bloqueioOperacao.
+     *
+     * @param bloqueioOperacaoDTO the bloqueioOperacaoDTO to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new bloqueioOperacaoDTO, or with status {@code 400 (Bad Request)} if the bloqueioOperacao has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("")
+    public ResponseEntity<BloqueioOperacaoDTO> createBloqueioOperacao(@Valid @RequestBody BloqueioOperacaoDTO bloqueioOperacaoDTO)
+        throws URISyntaxException {
+        LOG.debug("REST request to save BloqueioOperacao : {}", bloqueioOperacaoDTO);
+        if (bloqueioOperacaoDTO.getId() != null) {
+            throw new BadRequestAlertException("A new bloqueioOperacao cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        bloqueioOperacaoDTO = bloqueioOperacaoService.save(bloqueioOperacaoDTO);
+        return ResponseEntity.created(new URI("/api/bloqueio-operacaos/" + bloqueioOperacaoDTO.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, bloqueioOperacaoDTO.getId().toString()))
+            .body(bloqueioOperacaoDTO);
+    }
+
+    /**
+     * {@code PUT  /bloqueio-operacaos/:id} : Updates an existing bloqueioOperacao.
+     *
+     * @param id the id of the bloqueioOperacaoDTO to save.
+     * @param bloqueioOperacaoDTO the bloqueioOperacaoDTO to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated bloqueioOperacaoDTO,
+     * or with status {@code 400 (Bad Request)} if the bloqueioOperacaoDTO is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the bloqueioOperacaoDTO couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<BloqueioOperacaoDTO> updateBloqueioOperacao(
+        @PathVariable(value = "id", required = false) final Long id,
+        @Valid @RequestBody BloqueioOperacaoDTO bloqueioOperacaoDTO
+    ) throws URISyntaxException {
+        LOG.debug("REST request to update BloqueioOperacao : {}, {}", id, bloqueioOperacaoDTO);
+        if (bloqueioOperacaoDTO.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        if (!Objects.equals(id, bloqueioOperacaoDTO.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!bloqueioOperacaoRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+
+        bloqueioOperacaoDTO = bloqueioOperacaoService.update(bloqueioOperacaoDTO);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, bloqueioOperacaoDTO.getId().toString()))
+            .body(bloqueioOperacaoDTO);
+    }
+
+    /**
+     * {@code PATCH  /bloqueio-operacaos/:id} : Partial updates given fields of an existing bloqueioOperacao, field will ignore if it is null
+     *
+     * @param id the id of the bloqueioOperacaoDTO to save.
+     * @param bloqueioOperacaoDTO the bloqueioOperacaoDTO to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated bloqueioOperacaoDTO,
+     * or with status {@code 400 (Bad Request)} if the bloqueioOperacaoDTO is not valid,
+     * or with status {@code 404 (Not Found)} if the bloqueioOperacaoDTO is not found,
+     * or with status {@code 500 (Internal Server Error)} if the bloqueioOperacaoDTO couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
+    public ResponseEntity<BloqueioOperacaoDTO> partialUpdateBloqueioOperacao(
+        @PathVariable(value = "id", required = false) final Long id,
+        @NotNull @RequestBody BloqueioOperacaoDTO bloqueioOperacaoDTO
+    ) throws URISyntaxException {
+        LOG.debug("REST request to partial update BloqueioOperacao partially : {}, {}", id, bloqueioOperacaoDTO);
+        if (bloqueioOperacaoDTO.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        if (!Objects.equals(id, bloqueioOperacaoDTO.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!bloqueioOperacaoRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+
+        Optional<BloqueioOperacaoDTO> result = bloqueioOperacaoService.partialUpdate(bloqueioOperacaoDTO);
+
+        return ResponseUtil.wrapOrNotFound(
+            result,
+            HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, bloqueioOperacaoDTO.getId().toString())
+        );
+    }
+
+    /**
+     * {@code GET  /bloqueio-operacaos} : get all the bloqueioOperacaos.
+     *
+     * @param pageable the pagination information.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of bloqueioOperacaos in body.
+     */
+    @GetMapping("")
+    public ResponseEntity<List<BloqueioOperacaoDTO>> getAllBloqueioOperacaos(
+        @org.springdoc.core.annotations.ParameterObject Pageable pageable
+    ) {
+        LOG.debug("REST request to get a page of BloqueioOperacaos");
+        Page<BloqueioOperacaoDTO> page = bloqueioOperacaoService.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /bloqueio-operacaos/:id} : get the "id" bloqueioOperacao.
+     *
+     * @param id the id of the bloqueioOperacaoDTO to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the bloqueioOperacaoDTO, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<BloqueioOperacaoDTO> getBloqueioOperacao(@PathVariable("id") Long id) {
+        LOG.debug("REST request to get BloqueioOperacao : {}", id);
+        Optional<BloqueioOperacaoDTO> bloqueioOperacaoDTO = bloqueioOperacaoService.findOne(id);
+        return ResponseUtil.wrapOrNotFound(bloqueioOperacaoDTO);
+    }
+
+    /**
+     * {@code DELETE  /bloqueio-operacaos/:id} : delete the "id" bloqueioOperacao.
+     *
+     * @param id the id of the bloqueioOperacaoDTO to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBloqueioOperacao(@PathVariable("id") Long id) {
+        LOG.debug("REST request to delete BloqueioOperacao : {}", id);
+        bloqueioOperacaoService.delete(id);
+        return ResponseEntity.noContent()
+            .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
+            .build();
+    }
+}

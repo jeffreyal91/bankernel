@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193501"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "cob_plano_recorrencia",
+  "fields": [
+    {
+      "fieldName": "identificadorExterno",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "numeroReferencia",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "diasTeste",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "intervalo",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "parcelas",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tentativas",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "metodoPagamento",
+      "fieldType": "EnumMetodoPagamentoRecorrencia",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PIX,BOLETO"
+    },
+    {
+      "fieldName": "tipoPlano",
+      "fieldType": "EnumTipoPlanoRecorrencia",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FIXO,VARIAVEL"
+    }
+  ],
+  "name": "PlanoRecorrencia",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "linkCobranca",
+      "relationshipName": "linkCobranca",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,108 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193453"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "dep_deposito_boleto",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "EnumTipoDepositoBoleto",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "COBRANCA,DEPOSITO"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusDepositoBoleto",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CRIADO,EM_PROCESSO,PENDENTE,PAGO,APROVADO,REJEITADO,CANCELADO"
+    },
+    {
+      "fieldName": "codigoBarras",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "linhaDigitavel",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "60"
+    },
+    {
+      "fieldName": "valorOriginal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorCreditado",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "valorRecebido",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "pagadorNome",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "pagadorCpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "pagadorCnpj",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "14"
+    },
+    {
+      "fieldName": "dataVencimento",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dataRecebimento",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "contabilizado",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "DepositoBoleto",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "deposito",
+      "relationshipName": "deposito",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteira",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

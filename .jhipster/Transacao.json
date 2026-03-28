@@ -1,0 +1,98 @@
+{
+  "annotations": {
+    "changelogDate": "20260328193449"
+  },
+  "applications": ["bankernel"],
+  "dto": "mapstruct",
+  "entityTableName": "mov_transacao",
+  "fields": [
+    {
+      "fieldName": "valorEnviado",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorRecebido",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "estornada",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoTransacao",
+      "fieldType": "EnumTipoTransacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEPOSITO,SAQUE,TRANSFERENCIA,COBRANCA,ESTORNO"
+    },
+    {
+      "fieldName": "tipoPagamento",
+      "fieldType": "EnumTipoPagamento",
+      "fieldValues": "PIX,BOLETO,TED,INTERNO"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "EnumStatusTransacao",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDENTE,EM_PROCESSAMENTO,APROVADA,REJEITADA,CANCELADA,ESTORNADA"
+    },
+    {
+      "fieldName": "ativa",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoEntidadeOrigem",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "idEntidadeOrigem",
+      "fieldType": "Long"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Transacao",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteiraOrigem",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "numeroConta",
+      "otherEntityName": "carteira",
+      "relationshipName": "carteiraDestino",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaOrigem",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "codigo",
+      "otherEntityName": "moedaCarteira",
+      "relationshipName": "moedaDestino",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

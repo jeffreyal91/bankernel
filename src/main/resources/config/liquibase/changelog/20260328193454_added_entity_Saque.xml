@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Saque.
+    -->
+    <changeSet id="20260328193454-1" author="jhipster">
+        <createTable tableName="saq_saque">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="valor_saque" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="valor_enviado" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="descricao" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tipo_saque" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="situacao_saque" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="numero_referencia" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="motivo_rejeicao" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contabilizado" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="nome_usuario_fixo" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transacao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="transacao_estorno_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="carteira_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="moeda_carteira_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="conta_bancaria_destino_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="usuario_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="escritorio_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20260328193454-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/saq_saque.csv"
+                  separator=";"
+                  tableName="saq_saque"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="valor_saque" type="numeric"/>
+            <column name="valor_enviado" type="numeric"/>
+            <column name="descricao" type="string"/>
+            <column name="tipo_saque" type="string"/>
+            <column name="situacao_saque" type="string"/>
+            <column name="numero_referencia" type="string"/>
+            <column name="motivo_rejeicao" type="string"/>
+            <column name="contabilizado" type="boolean"/>
+            <column name="nome_usuario_fixo" type="string"/>
+            <column name="carteira_id" type="numeric"/>
+            <column name="moeda_carteira_id" type="numeric"/>
+            <column name="usuario_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

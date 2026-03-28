@@ -1,0 +1,11 @@
+id;tipo;status;valor_original;valor_creditado;valor_recebido;qr_code;tx_id;end_to_end_id;pagador_nome;pagador_cpf;pagador_cnpj;data_recebimento;contabilizado;deposito_id;carteira_id;usuario_id
+1;QR_DINAMICO_VENCIMENTO;EXPIRADO;14099.04;17543.41;21219.41;minus;the;engage tepid;as mid accidentally;information;famously despi;2026-03-27T23:11:03;true;1;1;1
+2;QR_DINAMICO;APROVADO;28429.94;8893.21;24490.83;till monstrous;victoriously swing;edge;unto provided;warmly fine;jealously quea;2026-03-28T14:26:03;false;2;2;2
+3;QR_DINAMICO;EXPIRADO;28189.18;28174.6;14240.48;seemingly gust yuck;zowie;aha who tool;apud helplessly internal;ack legend ;carefree;2026-03-28T16:04:42;true;3;3;2
+4;QR_DINAMICO_VENCIMENTO;CANCELADO;29382.6;30200.07;8540.49;immediately happily phew;brr curl meh;although gosh sidetrack;inasmuch unless;though;zowie often;2026-03-27T20:57:39;true;4;4;1
+5;QR_DINAMICO;PENDENTE;6732.98;3456;21782.1;furiously;so repeatedly freely;quadruple equally;pfft;rudely by w;oh aw shudder;2026-03-28T10:13:37;true;5;5;1
+6;QR_ESTATICO;EM_PROCESSO;23589.47;19781.03;10476.37;by lazily if;when;analyse;geez ajar pish;fatal vice ;stiffen includ;2026-03-27T22:20:20;true;6;6;1
+7;QR_ESTATICO;REJEITADO;9579.11;21206.9;29585.5;jam-packed whose;armoire;drug toward ravage;yahoo;legend;amused except;2026-03-28T09:56:58;false;7;7;2
+8;QR_DINAMICO;EM_PROCESSO;20283.59;19440.21;8309.29;reopen wholly uh-huh;neighboring as tender;rosy geez personalise;or ferret inside;exaggerate ;inasmuch;2026-03-28T17:49:53;true;8;8;2
+9;QR_ESTATICO;EXPIRADO;19620.77;19466.76;6309.87;desk;flustered times;witty deed beside;how;vista;alligator of w;2026-03-28T00:54:29;false;9;9;2
+10;QR_DINAMICO_VENCIMENTO;REJEITADO;14342.62;7709.35;1940.46;uh-huh for;thoroughly limp;true clamour ah;friendly;an calmly;cruelty thyme ;2026-03-28T18:12:12;false;10;10;1
