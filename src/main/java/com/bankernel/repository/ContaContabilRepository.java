@@ -1,6 +1,7 @@
 package com.bankernel.repository;
 
 import com.bankernel.domain.ContaContabil;
+import jakarta.persistence.LockModeType;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -37,4 +38,8 @@ public interface ContaContabilRepository extends JpaRepository<ContaContabil, Lo
 
     @Query("select contaContabil from ContaContabil contaContabil left join fetch contaContabil.moedaCarteira where contaContabil.id =:id")
     Optional<ContaContabil> findOneWithToOneRelationships(@Param("id") Long id);
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("select c from ContaContabil c where c.id = :id")
+    Optional<ContaContabil> findByIdComBloqueio(@Param("id") Long id);
 }

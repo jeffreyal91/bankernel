@@ -13,7 +13,7 @@
 - [x] Interfaces de integração Boleto (5 métodos + 6 DTOs)
 - [x] Interface de mensageria (acoplável)
 - [x] Interface de notificação (email, push, SMS)
-- [x] Contabilidade partida dobrada
+- [x] Contabilidade partida dobrada (ServicoContabilidade, estorno, consumidor mensageria, lock pessimista)
 - [x] Documentação Swagger/OpenAPI
 
 ## Fase 2 - Integrações Bancárias

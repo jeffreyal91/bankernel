@@ -1,6 +1,7 @@
 package com.bankernel.repository;
 
 import com.bankernel.domain.LancamentoContabil;
+import com.bankernel.domain.Transacao;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -40,4 +41,9 @@ public interface LancamentoContabilRepository
         "select lancamentoContabil from LancamentoContabil lancamentoContabil left join fetch lancamentoContabil.contaContabil where lancamentoContabil.id =:id"
     )
     Optional<LancamentoContabil> findOneWithToOneRelationships(@Param("id") Long id);
+
+    @Query(
+        "select l from LancamentoContabil l left join fetch l.contaContabil where l.transacao = :transacao and l.ativo = true"
+    )
+    List<LancamentoContabil> findByTransacaoAndAtivoTrue(@Param("transacao") Transacao transacao);
 }

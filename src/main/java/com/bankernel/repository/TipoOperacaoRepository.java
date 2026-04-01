@@ -1,6 +1,7 @@
 package com.bankernel.repository;
 
 import com.bankernel.domain.TipoOperacao;
+import com.bankernel.domain.enumeration.EnumTipoOperacao;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -41,4 +42,9 @@ public interface TipoOperacaoRepository extends JpaRepository<TipoOperacao, Long
         "select tipoOperacao from TipoOperacao tipoOperacao left join fetch tipoOperacao.contaCredito left join fetch tipoOperacao.contaDebito left join fetch tipoOperacao.moedaCarteira where tipoOperacao.id =:id"
     )
     Optional<TipoOperacao> findOneWithToOneRelationships(@Param("id") Long id);
+
+    @Query(
+        "select t from TipoOperacao t left join fetch t.contaCredito left join fetch t.contaDebito where t.codigo = :codigo"
+    )
+    Optional<TipoOperacao> findByCodigoComContas(@Param("codigo") EnumTipoOperacao codigo);
 }
